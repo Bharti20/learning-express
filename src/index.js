@@ -1,6 +1,11 @@
 const express = require('express')
 const app = express()
-const port = 9000
+const path = require('path')
+const port = 3000
+
+const staticPath = path.join(__dirname, "../public")
+app.use(express.static(staticPath))
+
 app.get('/', (req, res) => {
     res.send('Welcome To My Page..')
 })
@@ -16,5 +21,4 @@ app.get('/contact', (req, res) => {
 var server = app.listen(port, function () {  
     console.log('server running----')
 })
-
 
