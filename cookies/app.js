@@ -18,7 +18,7 @@ app.get('/cookie_check', function(req, res){
 });
 
 app.get('/cookie_clear', function(req, res){
-    res.clearCookie('name')
+    res.clearCookie()
     res.send(JSON.stringify(req.cookies));
 });
 app.listen(5000);
